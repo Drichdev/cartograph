@@ -2,7 +2,7 @@
   "name": "cartograph",
   "displayName": "Cartograph",
   "description": "%cartograph.description%",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "preview": true,
   "publisher": "drichdev",
   "author": {
