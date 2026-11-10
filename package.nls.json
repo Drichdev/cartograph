@@ -1,0 +1,17 @@
+{
+  "cartograph.description": "Interactive map of Python, TypeScript/JavaScript, Go, Java and Rust projects: calls, architecture, infrastructure (Redis, workers, databases), models, real schemas, security, dead code, duplicates and before/after comparison.",
+  "cartograph.cmd.open": "Cartograph: Open the project map",
+  "cartograph.cmd.refresh": "Cartograph: Refresh the analysis",
+  "cartograph.cmd.saveBaseline": "Cartograph: Save the current state as a baseline",
+  "cartograph.cmd.compareGit": "Cartograph: Compare with a Git revision…",
+  "cartograph.cfg.pythonPath": "Python interpreter (3.9+) used for the analysis. Empty = auto-detect (python3, python, py).",
+  "cartograph.cfg.exclude": "Extra folders to ignore (in addition to .venv, node_modules, __pycache__, build folders…).",
+  "cartograph.cfg.autoRefresh": "Re-run the analysis automatically when a source file is saved.",
+  "cartograph.cfg.databases": "Databases to read in **read-only** mode to show their real schema (Data view). Example: `{ \"name\": \"prod\", \"type\": \"mongodb\", \"uri\": \"${env:MONGO_URL}\" }`. Requires `psycopg2`/`psycopg` (PostgreSQL) or `pymongo` (MongoDB) in the Python interpreter. SQLite files are detected automatically.",
+  "cartograph.cfg.databases.name": "Display name.",
+  "cartograph.cfg.databases.type": "Database type (SQLite is detected automatically).",
+  "cartograph.cfg.databases.uri": "Connection URI. Use ${env:MY_VARIABLE} to avoid writing a password in the settings.",
+  "cartograph.cfg.databases.database": "MongoDB: database name if it is not in the URI.",
+  "cartograph.cfg.language": "Language of the Cartograph interface.",
+  "cartograph.cfg.language.auto": "Follow the VS Code display language"
+}

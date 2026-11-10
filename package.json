@@ -1,0 +1,191 @@
+{
+  "name": "cartograph",
+  "displayName": "Cartograph",
+  "description": "%cartograph.description%",
+  "version": "0.1.0",
+  "preview": true,
+  "publisher": "drichdev",
+  "author": {
+    "name": "Drichdev"
+  },
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0b0e22",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drichdev/cartograph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/drichdev/cartograph/issues"
+  },
+  "homepage": "https://github.com/drichdev/cartograph#readme",
+  "qna": "marketplace",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "architecture",
+    "architecture-visualization",
+    "call graph",
+    "dart",
+    "dead code",
+    "dependency graph",
+    "flutter",
+    "go",
+    "graph",
+    "i18n",
+    "java",
+    "kotlin",
+    "laravel",
+    "nextjs",
+    "php",
+    "python",
+    "react flow",
+    "rust",
+    "spring",
+    "tree-sitter",
+    "typescript",
+    "visualization"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "cartograph.open",
+        "title": "%cartograph.cmd.open%",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "cartograph.refresh",
+        "title": "%cartograph.cmd.refresh%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "cartograph.saveBaseline",
+        "title": "%cartograph.cmd.saveBaseline%"
+      },
+      {
+        "command": "cartograph.compareGit",
+        "title": "%cartograph.cmd.compareGit%"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "cartograph.open",
+          "when": "resourceLangId == python",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Cartograph",
+      "properties": {
+        "cartograph.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "%cartograph.cfg.pythonPath%"
+        },
+        "cartograph.exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "%cartograph.cfg.exclude%"
+        },
+        "cartograph.autoRefresh": {
+          "type": "boolean",
+          "default": true,
+          "description": "%cartograph.cfg.autoRefresh%"
+        },
+        "cartograph.databases": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "%cartograph.cfg.databases.name%"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "postgres",
+                  "mongodb"
+                ],
+                "description": "%cartograph.cfg.databases.type%"
+              },
+              "uri": {
+                "type": "string",
+                "description": "%cartograph.cfg.databases.uri%"
+              },
+              "database": {
+                "type": "string",
+                "description": "%cartograph.cfg.databases.database%"
+              }
+            },
+            "required": [
+              "type",
+              "uri"
+            ]
+          },
+          "markdownDescription": "%cartograph.cfg.databases%"
+        },
+        "cartograph.language": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "fr",
+            "en"
+          ],
+          "default": "auto",
+          "enumDescriptions": [
+            "%cartograph.cfg.language.auto%",
+            "Français",
+            "English"
+          ],
+          "description": "%cartograph.cfg.language%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "package": "node esbuild.mjs --production && vsce package --no-dependencies",
+    "typecheck": "tsc --noEmit -p . && tsc --noEmit -p webview",
+    "test": "node scripts/smoke-test.mjs",
+    "assets": "node scripts/make-assets.mjs",
+    "publish:vsce": "node esbuild.mjs --production && vsce publish --no-dependencies",
+    "publish:ovsx": "node esbuild.mjs --production && ovsx publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@dagrejs/dagre": "^1.1.4",
+    "@resvg/resvg-js": "^2.6.2",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "@xyflow/react": "^12.3.5",
+    "esbuild": "^0.24.0",
+    "html-to-image": "^1.11.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tree-sitter-wasms": "^0.1.11",
+    "typescript": "^5.5.4",
+    "web-tree-sitter": "^0.20.8",
+    "ovsx": "^0.10.0"
+  }
+}

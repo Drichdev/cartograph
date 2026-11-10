@@ -1,0 +1,17 @@
+{
+  "cartograph.description": "Carte interactive des projets Python, TypeScript/JavaScript, Go, Java et Rust : appels, architecture, infrastructure (Redis, workers, bases de données), modèles, schémas réels, sécurité, code mort, doublons et comparaison avant/après.",
+  "cartograph.cmd.open": "Cartograph : Ouvrir la carte du projet",
+  "cartograph.cmd.refresh": "Cartograph : Actualiser l'analyse",
+  "cartograph.cmd.saveBaseline": "Cartograph : Enregistrer l'état actuel comme référence",
+  "cartograph.cmd.compareGit": "Cartograph : Comparer avec une révision Git…",
+  "cartograph.cfg.pythonPath": "Interpréteur Python (3.9+) utilisé pour l'analyse. Vide = détection automatique (python3, python, py).",
+  "cartograph.cfg.exclude": "Dossiers supplémentaires à ignorer (en plus de .venv, node_modules, __pycache__, dossiers de build…).",
+  "cartograph.cfg.autoRefresh": "Relancer l'analyse automatiquement à l'enregistrement d'un fichier source.",
+  "cartograph.cfg.databases": "Bases à lire en **lecture seule** pour afficher leur schéma réel (vue Données). Exemple : `{ \"name\": \"prod\", \"type\": \"mongodb\", \"uri\": \"${env:MONGO_URL}\" }`. Nécessite `psycopg2`/`psycopg` (PostgreSQL) ou `pymongo` (MongoDB) dans l'interpréteur Python. Les fichiers SQLite sont détectés automatiquement.",
+  "cartograph.cfg.databases.name": "Nom affiché.",
+  "cartograph.cfg.databases.type": "Type de base (SQLite est détecté automatiquement).",
+  "cartograph.cfg.databases.uri": "URI de connexion. Utilise ${env:MA_VARIABLE} pour ne pas écrire de mot de passe dans les réglages.",
+  "cartograph.cfg.databases.database": "MongoDB : nom de la base si absent de l'URI.",
+  "cartograph.cfg.language": "Langue de l'interface de Cartograph.",
+  "cartograph.cfg.language.auto": "Suivre la langue d'affichage de VS Code"
+}

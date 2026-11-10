@@ -1,0 +1,5 @@
+{
+  "name": "boutique-front",
+  "private": true,
+  "dependencies": { "next": "14.2.0", "react": "18.3.1", "ioredis": "5.4.1", "@prisma/client": "5.14.0", "bullmq": "5.8.0", "zod": "3.23.0" }
+}
