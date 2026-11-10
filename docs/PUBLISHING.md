@@ -105,20 +105,19 @@ OVSX_PAT=<jeton-ovsx> npm run publish:ovsx
 Le dépôt contient deux workflows :
 
 - `.github/workflows/ci.yml` : à chaque *push* et *pull request*, compile, vérifie les types, lance `npm test` sous Linux, Windows et macOS, et garde le `.vsix` en artefact.
-- `.github/workflows/release.yml` : quand tu pousses un tag `v*` (ex. `v0.1.1`), compile, publie sur le Marketplace **et** Open VSX, et attache le `.vsix` à une *release* GitHub.
+- `.github/workflows/release.yml` : quand tu pousses un tag `v*` (ex. `v0.1.1`), compile, publie sur Open VSX, et attache le `.vsix` à une *release* GitHub. La publication sur le Visual Studio Marketplace se fait manuellement avec les commandes de l'étape 5.
 
-Configure les **secrets** du dépôt (*Settings → Secrets and variables → Actions*) :
+Configure le secret Open VSX dans le dépôt (*Settings → Secrets and variables → Actions*) :
 
 | Secret | Valeur |
 |---|---|
-| `VSCE_PAT` | le jeton Azure DevOps de l'étape 3 |
 | `OVSX_PAT` | le jeton Open VSX de l'étape 6 |
 
 ## 8. Publier une nouvelle version
 
 1. Mets à jour `CHANGELOG.md`.
 2. `npm version patch` (ou `minor` / `major`) : met à jour `package.json`, crée le commit et le tag.
-3. `git push --follow-tags` → le workflow `release.yml` publie tout seul.
+3. `git push --follow-tags` → le workflow `release.yml` publie sur Open VSX et crée la release GitHub. Publie ensuite sur le Visual Studio Marketplace manuellement avec les commandes de l'étape 5.
 
 Règles de versionnage ([SemVer](https://semver.org/lang/fr/)) : **patch** pour les corrections, **minor** pour les nouveautés compatibles (nouveau langage, nouvelle vue), **major** si un réglage ou un comportement change de façon incompatible.
 

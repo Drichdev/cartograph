@@ -24,10 +24,6 @@ jobs:
       - run: npm test
       - name: Package
         run: npm run package
-      - name: Publish to the Visual Studio Marketplace
-        run: npx vsce publish --no-dependencies --packagePath *.vsix
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
       - name: Publish to Open VSX
         run: npx ovsx publish *.vsix
         env:
