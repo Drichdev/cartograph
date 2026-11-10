@@ -24,7 +24,7 @@ git init
 git add .
 git commit -m "Cartograph 0.1.0"
 git branch -M main
-git remote add origin https://github.com/<ton-compte>/cartograph.git
+git remote add origin https://github.com/Drichdev/cartograph.git
 git push -u origin main
 ```
 
@@ -54,20 +54,6 @@ Installe-le localement pour l'essayer comme un utilisateur :
 ```bash
 code --install-extension cartograph-0.1.0.vsix
 ```
-
-Checklist à faire à la main dans une fenêtre VS Code **propre** :
-
-- [ ] La commande *Cartograph : Ouvrir la carte du projet* s'affiche et ouvre la carte.
-- [ ] Un projet Python, un projet TypeScript et un projet mixte s'analysent.
-- [ ] Le sélecteur FR / EN change la langue sans recharger.
-- [ ] Le bouton Exporter produit un PNG, un SVG et un fichier Mermaid.
-- [ ] *Évolution* : enregistrer l'état, modifier un fichier, voir la différence ; *Comparer avec Git…* fonctionne dans un dépôt.
-- [ ] Un dossier sans code affiche le message « Aucun code trouvé » (pas d'erreur).
-- [ ] Aucun message d'erreur dans **Sortie → Cartograph**.
-- [ ] Thème clair et thème sombre lisibles.
-- [ ] Sous Windows : Python est trouvé (`python` ou `py`).
-
-Ajoute 2 à 4 **captures d'écran** dans `media/screenshots/` (vue Système, vue Architecture, vue Évolution) et affiche-les dans le README : c'est ce qui convainc d'installer. Garde les images à moins de 1 Mo chacune.
 
 ## 5. Publier sur le Marketplace
 
